@@ -7,7 +7,7 @@ from models import ItemType, Element
 oh = ItemType.get(id=4)
 
 # get the column names
-col_names = set(['files', 'tags'])
+col_names = set(['Files', 'Tags'])
 for item in oh.items:
     col_names.update(item.elements.keys()) 
 col_names = list(col_names)
@@ -20,8 +20,8 @@ output.writeheader()
 
 for item in oh.items:
     row = {
-        "tags": '|'.join(item.tags),
-        "files": '|'.join([f.original_filename for f in item.files])
+        "Tags": '|'.join(item.tags),
+        "Files": '|'.join([f.original_filename for f in item.files])
     }
     for key, value in item.elements.items():
         row[key] = '|'.join(value)

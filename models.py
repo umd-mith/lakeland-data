@@ -372,7 +372,7 @@ class PostersItem(BaseModel):
     class Meta:
         db_table = 'omeka_posters_items'
 
-class Processe(BaseModel):
+class Processes(BaseModel):
     args = TextField()
     class_ = CharField(db_column='class')
     pid = IntegerField(index=True, null=True)
